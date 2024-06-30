@@ -14,25 +14,25 @@
     <title>InternBlog</title>
 </head>
 <body>
-    <form method="post" action="http://127.0.0.1:8000/store">
+    <form method="post" action="{{route('updateBlog',$data->id)}}">
         {{ csrf_field() }}
-    <h1>POST YOUR BLOG</h1>
-    Title: <br><br><input id='title' type="text" name="title" required value="{{old('title')}}">
+        @method('PUT')
+    <h1>EDIT YOUR BLOG</h1>
+    Title: <br><br><input id='title' type="text" name="title" required value="{{$data->title}}">
     @if($errors->has('title'))
         <div class="alert">
             <strong>{{$errors->first('title')}}</strong>
         </div>
     @endif
     <br><br>
-    Blog: <br><br><textarea name="blog" rows="5" cols="40" required value="{{old('blog')}}"></textarea>
+    Blog: <br><br><textarea name="blog" rows="5" cols="40" required>{{$data->blog}}</textarea>
     @if($errors->has('blog'))
         <div class="alert">
             <strong>{{$errors->first('blog')}}</strong>
         </div>
     @endif
     <br><br>
-    <input id='submit' type="submit" name="submit" value="Submit">
-    <button type="button" onClick="window.location.href = 'http://127.0.0.1:8000/create/upload_file';">UPLOAD FILE</button> 
+    <input id='submit' type="submit" name="submit" value="Submit"> 
     </form>
 </body>
 </html>

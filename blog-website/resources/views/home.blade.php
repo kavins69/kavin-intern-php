@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>CREATE YOUR BLOG</h1><br>
-    <button type="button" onClick="window.location.href = 'http://127.0.0.1:8000/create';">CREATE</button>
+    <button type="button" onClick="window.location.href = 'http://127.0.0.1:8000/create';">CREATE</button><br><br>
+    <button type="button" onClick="window.location.href = 'http://127.0.0.1:8000/views';">READ</button>
 </body>
 </html>
